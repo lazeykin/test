@@ -13,7 +13,7 @@ declare var FB: any;
     styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-    accessToken: IaccesToken;
+    accessToken: string;
     tokenSubscription: Subscription;
 
     constructor(
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
             console.log('submitLogin', response);
             if (response.authResponse) {
                 this.accessToken = response.authResponse.accessToken;
-                this.authService.saveAccesToken(this.accessToken as string);
+                this.authService.saveAccesToken(this.accessToken);
                 this.tokenSubscription = this.authService.login(this.accessToken).subscribe((data: IToken) => {
                     console.log(data);
                     this.authService.saveCurrentUser(data.result.token);

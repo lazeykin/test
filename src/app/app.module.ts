@@ -18,6 +18,9 @@ import { MapComponent } from './dashboard/map/map.component';
 import { ListComponent } from './dashboard/list/list.component';
 import { UserComponent } from './user/user/user.component';
 import { UserViewComponent } from './shared/user-view/user-view.component';
+import {DataService} from './core/services/data.service';
+import { UserInfoComponent } from './user-info/user-info/user-info.component';
+import {AgmCoreModule} from '@agm/core';
 
 
 @NgModule({
@@ -29,14 +32,18 @@ import { UserViewComponent } from './shared/user-view/user-view.component';
         MapComponent,
         ListComponent,
         UserComponent,
-        UserViewComponent
+        UserViewComponent,
+        UserInfoComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AgmCoreModule.forRoot({
+            apiKey: ''
+        })
     ],
     providers: [
         ApiService,
@@ -47,7 +54,8 @@ import { UserViewComponent } from './shared/user-view/user-view.component';
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
             multi: true
-        }
+        },
+        DataService
     ],
     bootstrap: [AppComponent]
 })

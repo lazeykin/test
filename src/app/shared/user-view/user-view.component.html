@@ -1,5 +1,9 @@
-<div *ngIf="user">
-  <img [src]="user.result.image" alt="">
-  <p>{{user.result.firstName + ' ' + user.result.lastName}}</p>
-  <p>{{user.result.gender}}</p>
+<div class="user" *ngIf="user">
+  <div>
+    <img class="user_img" [src]="user.result.image" alt="">
+  </div>
+  <div>
+    <p>{{user.result.firstName + ' ' + user.result.lastName}}</p>
+    <p>{{user.result.gender}}</p>
+  </div>
 </div>

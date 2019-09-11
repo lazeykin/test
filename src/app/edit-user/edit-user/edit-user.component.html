@@ -1,29 +1,33 @@
-<div>
-  <form
-          [formGroup]="form_group">
+<div class="container">
     <div>
-      <img *ngIf="url" [src]="url">
-      <input type="file"
-             id="file"
-             formControlName="form_image"
-      (change)="handleFileInput($event)">
-      <label for="file">Choose File</label>
+        <form
+                [formGroup]="form_group">
+            <div>
+                <img *ngIf="url" [src]="url">
+                <input type="file"
+                       id="file"
+                       formControlName="form_image"
+                       (change)="handleFileInput($event)">
+            </div>
 
+        </form>
     </div>
-
-  </form>
-  <form (ngSubmit)="saveUser()"
-        [formGroup]="form_user">
-    <input formControlName="firstName" type="text">
-    <input formControlName="lastName" type="text">
-    <label>
-      <input type="radio" value="Male" formControlName="gender">
-      <span>male</span>
-    </label>
-    <label>
-      <input type="radio" value="Female" formControlName="gender">
-      <span>female</span>
-    </label>
-    <button type="submit">SAVE</button>
-  </form>
+    <div>
+        <form class="user_form" (ngSubmit)="saveUser()"
+              [formGroup]="form_user">
+            <input formControlName="firstName" type="text">
+            <input formControlName="lastName" type="text">
+            <label>
+                <input type="radio" value="Male" formControlName="gender">
+                <span>male</span>
+            </label>
+            <label>
+                <input type="radio" value="Female" formControlName="gender">
+                <span>female</span>
+            </label>
+            <div>
+                <button type="submit">SAVE</button>
+            </div>
+        </form>
+    </div>
 </div>

@@ -1,3 +1,7 @@
-<p>
-  list works!
-</p>
+<div class="container">
+  <div *ngFor="let user of users" (click)="onGoToUser(user.id)">
+      <img [src]="user.image" alt="user photo">
+      <p *ngIf="user.firstName && user.lastName">{{user.lastName + ' ' + user.firstName}}</p>
+      <p *ngIf="user.gender">{{user.gender}}</p>
+  </div>
+</div>

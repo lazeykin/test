@@ -7,6 +7,7 @@ import {DashboardComponent} from './dashboard/dashboard/dashboard.component';
 import {MapComponent} from './dashboard/map/map.component';
 import {ListComponent} from './dashboard/list/list.component';
 import {UserComponent} from './user/user/user.component';
+import {UserInfoComponent} from './user-info/user-info/user-info.component';
 
 const routes: Routes = [
     { path: '', component: LoginComponent},
@@ -21,7 +22,10 @@ const routes: Routes = [
             {path: 'list', component: ListComponent}
         ]
     },
-    {path: 'profile', component: UserComponent, canActivate: [AuthGuard]}
+    {path: 'profile', component: UserComponent, canActivate: [AuthGuard]},
+    {path: 'user/:id', component: UserInfoComponent, canActivate: [AuthGuard]},
+    // otherwise redirect to home
+    {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
