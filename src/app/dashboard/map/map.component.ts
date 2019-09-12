@@ -25,12 +25,12 @@ export class MapComponent implements OnInit {
         this.dataService.userArray.subscribe(data => {
             console.log(data);
             this.users = data;
-            this.locations = this.users.map(v => ({ lat: +v.lat, lng: +v.lon, alpha: 0.5 }));
+            this.locations = this.users.map(v => ({ lat: +v.lat, lng: +v.lon, alpha: 0.5, id: v.id, label: v.firstName }));
         });
 
     }
-    selectMarker(i:number) {
-        this.router.navigate([`../../user/${this.users[i].id}`]);
+    selectMarker(id:number) {
+        this.router.navigate([`../../user/${id}`]);
     }
 
 }

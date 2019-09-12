@@ -8,8 +8,8 @@
             [opacity]="marker.alpha"
             [markerDraggable]="true"
             [iconUrl]="users[i].image"
-            (markerClick)="selectMarker(i)"
-            [label]="users[i].firstName"
+            (markerClick)="selectMarker(marker.id)"
+            [label]="marker.firstName"
     >
     </agm-marker>
   </agm-map>
