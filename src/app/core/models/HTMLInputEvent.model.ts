@@ -1,3 +1,3 @@
 interface HTMLInputEvent extends Event {
-    target: HTMLInputElement & EventTarget;
+  target: HTMLInputElement & EventTarget;
 }

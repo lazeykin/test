@@ -1,15 +1,20 @@
 <div>
-  <agm-map style="width:100%;height:700px" [latitude]='latitude' [longitude]='longitude'
-           [mapTypeId]='mapType' [zoom]="10">
+  <agm-map
+    style="width:100%;height:700px"
+    [latitude]="latitude"
+    [longitude]="longitude"
+    [mapTypeId]="mapType"
+    [zoom]="10"
+  >
     <agm-marker
-            *ngFor="let marker of locations, let i = index"
-            [latitude]="marker.lat"
-            [longitude]="marker.lng"
-            [opacity]="marker.alpha"
-            [markerDraggable]="true"
-            [iconUrl]="users[i].image"
-            (markerClick)="selectMarker(marker.id)"
-            [label]="marker.firstName"
+      *ngFor="let marker of locations; let i = index"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+      [opacity]="marker.alpha"
+      [markerDraggable]="true"
+      [iconUrl]="users[i].image"
+      (markerClick)="selectMarker(marker.id)"
+      [label]="marker.firstName"
     >
     </agm-marker>
   </agm-map>

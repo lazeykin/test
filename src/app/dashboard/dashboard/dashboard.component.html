@@ -1,8 +1,12 @@
 <header>
-    <a routerLink="list">List</a>
-    <a routerLink="map">Map</a>
-    <input type="text" (keyup)="applyFilter($event.target.value)" placeholder="Search">
-    <a [routerLink]="['../profile']">Profile</a>
+  <a routerLink="list">List</a>
+  <a routerLink="map">Map</a>
+  <input
+    type="text"
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Search"
+  />
+  <a [routerLink]="['../profile']">Profile</a>
 </header>
 
 <router-outlet></router-outlet>

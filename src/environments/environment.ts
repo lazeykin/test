@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-    production: false,
-    api_url: 'https://test-api.live.gbksoft.net'
+  production: false,
+  apiUrl: "https://test-api.live.gbksoft.net/rest/v1/",
+  appId: 1637129439866047
 };
 
 /*

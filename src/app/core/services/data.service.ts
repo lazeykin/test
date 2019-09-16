@@ -5,7 +5,7 @@ import {Observable, Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  public subject = new Subject();
-  public userArray = this.subject as Observable<any>;
+  subject = new Subject();
+  userArray = this.subject as Observable<any>;
   constructor() { }
 }
