@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../core/services/auth.service";
 import { Subscription } from "rxjs";
 import { Router } from "@angular/router";
-import {environment} from '../../environments/environment';
+import { environment } from "../../environments/environment";
 
 declare let FB: any;
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.authService.saveAccesToken(this.accessToken);
         this.tokenSubscription = this.authService
           .login(this.accessToken)
-          .subscribe((data) => {
+          .subscribe(data => {
             this.authService.saveCurrentUser(data);
             this.router.navigate(["/edit-user"]);
           });
