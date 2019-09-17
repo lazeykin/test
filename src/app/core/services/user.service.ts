@@ -27,10 +27,7 @@ export class UserService {
   }
 
   getCurrentUserInfo(query): Observable<any> {
-    return this.apiService.get("user/current", query);
-  }
-  getCurrentUserInfoInit(query): Observable<any> {
-    return this.apiService.getInit("user/current", query);
+    return this.apiService.get("user/current", query).pipe(map(data => data.result));
   }
   getAllUsers(paramsObj, search?: boolean): Observable<IUserInfo[]> {
     let params = new HttpParams();

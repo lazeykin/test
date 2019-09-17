@@ -63,7 +63,7 @@ import {AppConfigService} from './core/services/app-config.service';
     },
     { provide: APP_INITIALIZER,
       useFactory: (configService: AppConfigService) =>
-        () => configService.loadConfigurationData(),
+        () => configService.checkToken(),
       deps: [AppConfigService],
       multi: true },
     DataService

@@ -15,7 +15,7 @@ export class ApiService {
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
     return this.http
       .get(`${path}`, { params })
-      .pipe(catchError(val => of(`I caught: ${val}` )));
+      .pipe(catchError(val => of(`I caught: ${val}`)));
   }
 
   put(path: string, body: any = {}): Observable<any> {
@@ -34,9 +34,5 @@ export class ApiService {
     return this.http
       .delete(`${path}`)
       .pipe(catchError(val => of(`I caught: ${val}`)));
-  }
-  getInit(path: string, params: HttpParams = new HttpParams()): Observable<any> {
-    return this.http
-      .get(`${path}`, { params });
   }
 }
